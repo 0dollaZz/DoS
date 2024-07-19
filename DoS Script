@@ -1,11 +1,3 @@
-#                                          This is a DoS script, please  -DON'T-  use it for illegal purposes.
-#                                                    For educational and experimental purpose only.
-#                                          The creator of this is not responisble for any illegal use by others.
-#                                                                 Made by 0dollaZz 
-
-# ! ! ! ! !   KEEP IN MIND THAT YOU CAN GET ARRESTED AND PAY HEFTY FINES FOR DOING AN ILLEGAL (NON AUTHORIZED) DOS ATTACK   ! ! ! ! !
-
-
 print("This is a DoS script.  !  DON'T  !   use it for illegal purposes!")
 print("The creator of this is not responisble for any illegal use by others.")
 print("! ! IMPORTANT ! ! : To stop the script you must close the program yourself NOT BY A BUTTON.")
