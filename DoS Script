@@ -14,7 +14,6 @@ print("! ! IMPORTANT ! ! : As soon as you see status 500 or more that means that
 import requests
 from bs4 import BeautifulSoup
 from threading import Thread
-import keyboard
 
 url= input("Paste the website that you want to stress (www. or https://) :")
 
