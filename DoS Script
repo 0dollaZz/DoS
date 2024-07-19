@@ -12,7 +12,6 @@ print("! ! IMPORTANT ! ! : To stop the script you must close the program yoursel
 print("! ! IMPORTANT ! ! : As soon as you see status 500 or more that means that the website is down.")
 
 import requests
-from bs4 import BeautifulSoup
 from threading import Thread
 
 url= input("Paste the website that you want to stress (www. or https://) :")
